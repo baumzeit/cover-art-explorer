@@ -1,10 +1,14 @@
+import { createGlobalStyle } from 'styled-components';
+
+/* Import Components */
+import Explorer from './components/Explorer';
+import About from './components/About';
+
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Route = require('react-router-dom').Route;
 const BrowserRouter = require('react-router-dom').BrowserRouter;
 const hashHistory = require('react-router-dom').hashHistory;
-
-import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -17,12 +21,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-/* Import Components */
-import Explorer from './components/Explorer';
-import About from './components/About';
-
-ReactDOM.render((
-  <BrowserRouter>
+ReactDOM.render(
+	<BrowserRouter>
     <div>
       <Route exact path="/" component={Explorer}/>
       <Route path="/about" component={About}/>
